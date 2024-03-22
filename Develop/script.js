@@ -16,9 +16,9 @@ const collectEmployees = function(EmployeeFN, EmployeeLN, Salary) {
     salary = prompt("What is the employee's salary?");
     if (isNaN(salary)){
       alert ("Not a Number!");
-      salary = 0 + 0;
+      salary = 0;
     }
-   
+   console.log(salary);
 
     var employee = {
       firstName: employeeFN,
@@ -40,25 +40,23 @@ const collectEmployees = function(EmployeeFN, EmployeeLN, Salary) {
 }
 
 // Display the average salary
-const displayAverageSalary = function(employeesArray) {
-  // TODO: Calculate and display the average salary
-  let loopCounter = 0;
+const displayAverageSalary = function(workers) {
+  // Calculate and display the average salary
   let total = 0;
-  for(let i = 2; i < employeesArray.length; i + 3){
-    total += employeesArray[i];
-    loopCounter++;
+  for (let i = 0; i < workers.length; i++) {
+    total += workers[i].salary;
   }
-  salaryAverage = total / loopCounter;
-  console.log('The average salary is '+ salaryAverage +'.');
+  let numEmployees = workers.length;
+  let salaryAverage = total / numEmployees;
+  console.log('The average salary of our (' + numEmployees + ') employees is ' + salaryAverage.toFixed(2) + '.');
 }
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
-  // TODO: Select and display a random employee
-  let winner = (Math.random() * employeesArray.length);
-  winner = Math.round(winner);
-  console.log (winner);
-  console.log("Congratulations to " + employeesArray[winner] + " " + employeesArray[winner+1] + ", our raffle winner!");
+  // Select and display a random employee
+  let winnerIndex = Math.floor(Math.random() * employeesArray.length);
+  let winner = employeesArray[winnerIndex];
+  console.log("Congratulations to " + winner.firstName + " " + winner.lastName + ", our raffle winner!");
 }
 
 /*
