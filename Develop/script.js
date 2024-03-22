@@ -18,7 +18,6 @@ const collectEmployees = function(EmployeeFN, EmployeeLN, Salary) {
       alert ("Not a Number!");
       salary = 0;
     }
-   console.log(salary);
 
     var employee = {
       firstName: employeeFN,
@@ -41,7 +40,7 @@ const collectEmployees = function(EmployeeFN, EmployeeLN, Salary) {
 
 // Display the average salary
 const displayAverageSalary = function(workers) {
-  // Calculate and display the average salary
+  // TODO: Calculate and display the average salary
   let total = 0;
   for (let i = 0; i < workers.length; i++) {
     total += workers[i].salary;
@@ -53,7 +52,7 @@ const displayAverageSalary = function(workers) {
 
 // Select a random employee
 const getRandomEmployee = function(employeesArray) {
-  // Select and display a random employee
+  // TODO: Select and display a random employee
   let winnerIndex = Math.floor(Math.random() * employeesArray.length);
   let winner = employeesArray[winnerIndex];
   console.log("Congratulations to " + winner.firstName + " " + winner.lastName + ", our raffle winner!");
